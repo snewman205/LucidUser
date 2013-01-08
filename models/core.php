@@ -30,6 +30,8 @@ $Template = new Template();
 
 function getConfig($key) {
 
+	global $Database;
+
 	return $Database->queryOneField('configValue', "SELECT * FROM " . DB_PREFIX . "config WHERE configName=%s", $key);
 	
 }
