@@ -1,5 +1,6 @@
 <?php
 
+require_once(MODEL_DIR . "theme.class.php");
 require_once(LIB_DIR . "XTPL/xtemplate.class.php");
 
 class Template extends Theme {
