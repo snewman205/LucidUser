@@ -28,4 +28,10 @@ $Theme = new Theme($currentTheme);
 
 $Template = new Template();
 
+function getConfig($key) {
+
+	return $Database->queryOneField('configValue', "SELECT * FROM " . DB_PREFIX . "config WHERE configName=%s", $key);
+	
+}
+
 ?>
