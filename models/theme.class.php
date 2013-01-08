@@ -19,8 +19,11 @@ class Theme {
 			
 		}
 		
-		$systemName = $Database->queryOneField('themeSystemName', "SELECT * FROM " . DB_PREFIX . "themes WHERE themeId=%s", $themeId);
+		$themeCfg = $Database->queryFirstRow("SELECT * FROM " . DB_PREFIX . "themes WHERE themeId=%s", $themeId);
+		
+		$this->themeId = $themeCfg['themeId'];
 		$this->themePath = THEME_DIR . $systemName . "/";
+		$this->themeName = $themeCfg['themeName'];
 		
 	}
 	
