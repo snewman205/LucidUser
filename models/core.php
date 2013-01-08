@@ -22,7 +22,7 @@ $Logging = new Logging(E_USER_ERROR);
 $Localization = new Localization();
 $Localization->setLang("EN");
 
-$currentTheme = $Database->queryOneField('configValue', "SELECT configValue FROM " . DB_PREFIX . "config WHERE configName=%s", 'theme');
+$currentTheme = $Database->queryOneField('configValue', "SELECT * FROM " . DB_PREFIX . "config WHERE configName=%s", 'theme');
 $Theme = new Theme($currentTheme);
 
 ?>
