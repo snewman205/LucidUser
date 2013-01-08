@@ -21,8 +21,10 @@ class Theme {
 		$themeCfg = $Database->queryFirstRow("SELECT * FROM " . DB_PREFIX . "themes WHERE themeId=%s", $themeId);
 		
 		$this->themeId = $themeCfg['themeId'];
-		$this->themePath = THEME_DIR . $themeCfg['themeSystemName'] . "/";
+		$this->themePath = ROOT_DIR . "themes/" . $themeCfg['themeSystemName'] . "/";
 		$this->themeName = $themeCfg['themeDisplayName'];
+		
+		define("THEME_PATH", $this->themePath);
 		
 	}
 	
