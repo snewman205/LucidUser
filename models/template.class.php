@@ -26,7 +26,7 @@ class Template extends Theme {
 		
 	}
 	
-	function set($tpl = NULL) {
+	function setTemplate($tpl = NULL) {
 	
 		global $Logging, $Theme;
 	
