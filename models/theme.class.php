@@ -3,8 +3,7 @@
 class Theme {
 
 	private $themeId;
-	
-	protected $themePath;
+	private $themePath;
 	
 	public $themeName;
 	
@@ -24,6 +23,12 @@ class Theme {
 		$this->themeId = $themeCfg['themeId'];
 		$this->themePath = THEME_DIR . $themeCfg['themeSystemName'] . "/";
 		$this->themeName = $themeCfg['themeDisplayName'];
+		
+	}
+	
+	protected function getPath() {
+	
+		return $this->themePath;
 		
 	}
 	
