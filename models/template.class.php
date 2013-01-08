@@ -12,7 +12,7 @@ class Template extends Theme {
 		
 		if($tpl) {
 		
-			if(!file_exists($this->themePath . $tpl)) {
+			if(!file_exists($this->themePath . "views/" . $tpl)) {
 			
 				$Logging->error("Failed to open specified template file", E_USER_ERROR);
 				
@@ -34,7 +34,7 @@ class Template extends Theme {
 			
 		}
 		
-		if(!file_exists($this->themePath . $tpl)) {
+		if(!file_exists($this->themePath . "views/" . $tpl)) {
 			
 			$Logging->error("Failed to open specified template file", E_USER_ERROR);
 				
