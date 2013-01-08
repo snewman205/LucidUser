@@ -8,7 +8,15 @@ class Template extends Theme {
 
 	function Template($tpl = NULL) {
 		
+		global $Logging;
+		
 		if($tpl) {
+		
+			if(!file_exists($this->themePath . $tpl)) {
+			
+				$Logging->error("Failed to open specified template file", E_USER_ERROR);
+				
+			}
 		
 			$this->xtpl = (!$this->xtpl) ? new XTemplate($tpl) : $this->xtpl->restart($tpl);
 			
@@ -24,6 +32,12 @@ class Template extends Theme {
 		
 			$Logging->error("Must specify template file", E_USER_ERROR);
 			
+		}
+		
+		if(!file_exists($this->themePath . $tpl)) {
+			
+			$Logging->error("Failed to open specified template file", E_USER_ERROR);
+				
 		}
 		
 		$this->xtpl = (!$this->xtpl) ? new XTemplate($tpl) : $this->xtpl->restart($tpl);
