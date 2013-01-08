@@ -7,7 +7,6 @@ class Logging {
 	function Logging($loggingLevel = NULL) {
 	
 		$this->loggingLevel = ($loggingLevel) ? $loggingLevel : E_ALL;
-		echo $this->loggingLevel;
 		
 	}
 	
