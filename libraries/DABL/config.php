@@ -16,7 +16,7 @@ define('ROOT', dirname(__FILE__) . '/');
 define('APP_DIR', ROOT);
 
 // directory of configurations files
-define('CONFIG_DIR', ROOT_PATH . 'config/');
+define('CONFIG_DIR', ROOT_DIR . 'config/');
 
 // directory where libraries are located
 define('LIBRARIES_DIR', APP_DIR);
@@ -36,12 +36,12 @@ ini_set('log_errors', true);
 // file for error logging
 ini_set('error_log', LOGS_DIR . 'error_log');
 
-require_once(LIBRARIES_DIR . 'dabl/ClassLoader.php');
-require_once(LIBRARIES_DIR . 'dabl/print_r2.php');
+require_once(LIBRARIES_DIR . 'ClassLoader.php');
+require_once(LIBRARIES_DIR . 'print_r2.php');
 
 // Strip added slashes if needed
 if (get_magic_quotes_gpc()) {
-	require_once(LIBRARIES_DIR . 'dabl/strip_request_slashes.php');
+	require_once(LIBRARIES_DIR . 'strip_request_slashes.php');
 	strip_request_slashes();
 }
 
