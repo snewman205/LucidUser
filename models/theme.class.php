@@ -10,7 +10,7 @@ class Theme {
 	
 	function Theme($themeId = NULL) {
 	
-		global $Logging, $Localization;
+		global $Database, $Logging, $Localization;
 	
 		if($themeId === NULL) {
 		
@@ -18,6 +18,9 @@ class Theme {
 			//$Logging->error($Localization->stringFromKey(ERR_MISSING_THEMEID), E_USER_ERROR);
 			
 		}
+		
+		$systemName = $Database->queryOneField('themeSystemName', "SELECT * FROM " . DB_PREFIX . "themes WHERE themeId=%s", $themeId);
+		$this->themePath = THEME_DIR . $systemName . "/";
 		
 	}
 	
