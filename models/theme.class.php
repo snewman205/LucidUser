@@ -1,11 +1,14 @@
 <?php
 
+require_once(LIB_PATH . "XTPL/xtemplate.class.php");
+
 class Theme {
 
-	protected $themeId;
+	private $themeId;
+	
+	protected $themePath;
 	
 	public $themeName;
-	public $themePath;
 	
 	function Theme($themeId = NULL) {
 	
