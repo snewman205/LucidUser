@@ -15,6 +15,7 @@ require_once(MODEL_DIR . "logging.class.php");
 require_once(MODEL_DIR . "localization.class.php");
 require_once(LIB_DIR . "MeekroDB/meekrodb.class.php");
 require_once(MODEL_DIR . "theme.class.php");
+require_once(MODEL_DIR . "template.class.php");
 
 $Database = new MeekroDB(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -25,5 +26,7 @@ $Localization->setLang("EN");
 
 $currentTheme = $Database->queryOneField('configValue', "SELECT * FROM " . DB_PREFIX . "config WHERE configName=%s", 'theme');
 $Theme = new Theme($currentTheme);
+
+$Template = new Template();
 
 ?>
