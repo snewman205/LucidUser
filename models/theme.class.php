@@ -1,7 +1,5 @@
 <?php
 
-require_once(LIB_DIR . "XTPL/xtemplate.class.php");
-
 class Theme {
 
 	private $themeId;
@@ -13,8 +11,6 @@ class Theme {
 	function Theme($themeId = NULL) {
 	
 		global $Logging, $Localization;
-	
-		echo $themeId;
 	
 		if($themeId === NULL) {
 		
