@@ -1,6 +1,6 @@
 <?php
 
-require_once(LIB_PATH . "XTPL/xtemplate.class.php");
+require_once(LIB_DIR . "XTPL/xtemplate.class.php");
 
 class Theme {
 
